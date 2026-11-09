@@ -1,26 +1,250 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #16181f;
+  --color-paper: #f4f0e6;
+  --color-sand: #e7e0d2;
+  --color-line: #ddd4c6;
+  --color-peri: #8b9ae3;
+  --color-peri-deep: #3c4d96;
+  --color-blue: #0b145c;
+  --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-padding-top: 6.5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #c9d2f4;
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-peri-deep);
+  outline-offset: 3px;
+}
+
+.display {
+  font-family: var(--font-serif);
+  font-variation-settings: "SOFT" 30, "opsz" 72;
+  letter-spacing: -0.035em;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 70;
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 0.6rem 1rem;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+.field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  background: transparent;
+  padding: 0.7rem 0;
+  font: inherit;
+  color: var(--color-ink);
+  border-radius: 0;
+}
+
+.field:focus {
+  outline: none;
+  border-bottom-color: var(--color-peri-deep);
+}
+
+.field::placeholder {
+  color: color-mix(in srgb, var(--color-ink) 40%, transparent);
+}
+
+.plan {
+  background-color: #14161c;
+  background-image: radial-gradient(rgba(244, 240, 230, 0.16) 0.7px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-in .stagger > * {
+  opacity: 1;
+  transform: none;
+}
+
+.route-rule {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-in .route-rule {
+  transform: scaleX(1);
+}
+
+.service-row {
+  position: relative;
+}
+
+.service-row .service-line {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--color-peri-deep);
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.service-row:hover .service-line,
+.service-row:focus-within .service-line {
+  transform: scaleX(1);
+}
+
+.link-arrow span {
+  display: inline-block;
+  transition: transform 0.35s ease;
+}
+
+.link-arrow:hover span {
+  transform: translateX(4px);
+}
+
+.banner-photo {
+  animation: banner-settle 16s ease-out both;
+}
+
+@keyframes banner-settle {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.route-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 2.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.route-draw-late {
+  animation-delay: 0.7s;
+  animation-duration: 1.4s;
+}
+
+.route-nodes circle {
+  opacity: 0;
+  animation: node-in 0.45s ease forwards;
+}
+
+.route-nodes circle:nth-child(1) {
+  animation-delay: 0.35s;
+}
+.route-nodes circle:nth-child(2) {
+  animation-delay: 0.85s;
+}
+.route-nodes circle:nth-child(3) {
+  animation-delay: 1.35s;
+}
+.route-nodes circle:nth-child(4) {
+  animation-delay: 1.7s;
+}
+.route-nodes circle:nth-child(5) {
+  animation-delay: 2.15s;
+}
+
+.bead {
+  opacity: 0;
+  animation: bead-in 0.4s ease 2.1s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes node-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bead-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .stagger > *,
+  .route-nodes circle,
+  .bead {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .route-draw,
+  .route-rule,
+  .banner-photo {
+    animation: none;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+
+  .bead {
+    display: none;
+  }
+}
+
+@media (scripting: none) {
+  .reveal,
+  .stagger > * {
+    opacity: 1;
+    transform: none;
+  }
 }

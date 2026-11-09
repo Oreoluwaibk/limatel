@@ -3,7 +3,7 @@ import { testimonials } from "@/lib/content";
 
 export function Testimonials() {
   return (
-    <section className="px-5 py-20 sm:px-8 lg:py-28">
+    <section className="px-6 py-20 sm:px-12 lg:px-16 lg:py-28">
       <div className="mx-auto max-w-[1120px]">
         <Reveal>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">

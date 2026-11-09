@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
 import { Reveal } from "@/components/reveal";
-import { stages } from "@/lib/content";
+import { controls, stages } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "How we deliver",
@@ -24,7 +24,7 @@ export default function HowWeDeliverPage() {
           field safety supervision and a record of tests and handover.
         </p>
       </PageHeading>
-      <section className="px-5 sm:px-8">
+      <section className="px-6 sm:px-12 lg:px-16">
         <div className="mx-auto max-w-[1120px] rounded-[28px] bg-white px-6 py-12 sm:px-12 sm:py-16">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.22em] text-peri-deep">On every job</p>
@@ -35,31 +35,20 @@ export default function HowWeDeliverPage() {
               A new intercity fibre route and a chamber that needs opening go through the same
               checks. The size of the job does not change what has to be true before the crew leaves.
             </p>
-            <ul className="mt-10 grid gap-8 border-t border-line pt-8 sm:grid-cols-3">
-              <li>
-                <h3 className="font-serif text-2xl">Specification</h3>
-                <p className="mt-2 text-sm leading-6 text-ink/70">
-                  Each stage is measured against what the client asked for, not a general method.
-                </p>
-              </li>
-              <li>
-                <h3 className="font-serif text-2xl">Safety</h3>
-                <p className="mt-2 text-sm leading-6 text-ink/70">
-                  Field safety supervision stays with the crew while the ground is open.
-                </p>
-              </li>
-              <li>
-                <h3 className="font-serif text-2xl">Records</h3>
-                <p className="mt-2 text-sm leading-6 text-ink/70">
-                  Tests and the handover note go with the route when the job is closed.
-                </p>
-              </li>
+            <ul className="mt-10 grid gap-8 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
+              {controls.map((item) => (
+                <li key={item.title}>
+                  <h3 className="font-serif text-2xl">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-ink/70">{item.text}</p>
+                </li>
+              ))}
             </ul>
           </Reveal>
         </div>
       </section>
       <section className="mt-16 bg-ink text-paper lg:mt-24">
-        <div className="mx-auto max-w-[1120px] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="px-6 py-20 sm:px-12 lg:px-16 lg:py-28">
+        <div className="mx-auto max-w-[1120px]">
           <Reveal>
             <div className="relative">
               <div className="route-rule absolute top-[7px] right-0 left-0 hidden h-px bg-peri/80 lg:block" />
@@ -83,6 +72,7 @@ export default function HowWeDeliverPage() {
               <span aria-hidden="true">→</span>
             </Link>
           </Reveal>
+        </div>
         </div>
       </section>
     </>

@@ -24,7 +24,52 @@ export const company = {
     { name: "Mustapha Lola Alhaji", role: "Chairman and Chief Executive Officer" },
     { name: "Mustapha Babatunde Ahmed", role: "General Manager" },
   ],
+  mission:
+    "To design, deploy and maintain the cable routes telecommunications networks depend on. That is optical fibre, copper, coaxial and RF cable, the civil works around them, and the maintenance that puts a failed route back in service.",
+  vision:
+    "To be the infrastructure partner operators, public bodies and corporate sites rely on when a route has to be built, expanded or restored, and to keep that work reliable enough that the network stays in service.",
+  positioning:
+    "Limatel is a telecommunications infrastructure engineering, network deployment and maintenance partner. The company supports the development, expansion, operation and maintenance of telecom networks, from cable and civil works through testing, commissioning and field maintenance.",
+  founderNote:
+    "We founded Limatel with a clear purpose: to bridge the communication gap and connect people in a fast-paced and ever-evolving digital world.",
 };
+
+export const specialty = [
+  "Construction of duct routes",
+  "Laying of optical fibre cable",
+  "Splicing, termination and testing",
+  "Overhead and underground cable",
+  "Complete external-line cable projects",
+  "Earthing",
+  "Supply of telecom materials",
+];
+
+export const controls = [
+  {
+    title: "Specification",
+    text: "Each stage is checked against the client’s specification, approved drawings and method statement.",
+  },
+  {
+    title: "Quality",
+    text: "Inspections at defined stages of the work, with testing and commissioning written down before handover.",
+  },
+  {
+    title: "Safety",
+    text: "Health, safety and environmental practice, with field safety supervision while the ground is open.",
+  },
+  {
+    title: "Programme",
+    text: "Scheduling, work-front planning and progress monitoring, reported daily, weekly and monthly.",
+  },
+  {
+    title: "Crew and materials",
+    text: "Skilled technical manpower, site supervision, and control of materials, equipment and tools.",
+  },
+  {
+    title: "Records",
+    text: "Fault tracking, restoration notes and the handover record that closes the job.",
+  },
+];
 
 export const nav = [
   { href: "/who-we-are", label: "Who we are" },
@@ -110,11 +155,11 @@ export const testimonials = [
 export const stages = [
   {
     title: "Plan",
-    text: "Scope, mobilisation, method and the materials the route will need.",
+    text: "Scope review, mobilisation, method and the materials, equipment and logistics the route will need.",
   },
   {
     title: "Survey",
-    text: "Walk the ground. Check the route, the crossings and what is already buried.",
+    text: "Technical site survey, route assessment and a check of crossings and what is already buried.",
   },
   {
     title: "Civil",
@@ -126,11 +171,11 @@ export const stages = [
   },
   {
     title: "Prove",
-    text: "Splice, test, commission and hand over the records with the route.",
+    text: "Splice, test, commission, and hand over the acceptance documents with the route.",
   },
   {
     title: "Keep",
-    text: "Inspect, restore cuts, and report until the route is quiet again.",
+    text: "Preventive and corrective maintenance, fault restoration, progress reports and final handover.",
   },
 ];
 

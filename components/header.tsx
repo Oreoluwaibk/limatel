@@ -50,7 +50,8 @@ export function Header() {
       <a className="skip" href="#content">
         Skip to content
       </a>
-      <div className="mx-auto flex h-[5.5rem] max-w-[1120px] items-center justify-between gap-4 px-5 sm:px-8">
+      <div className="px-6 sm:px-12 lg:px-16">
+      <div className="mx-auto flex h-[5.5rem] max-w-[1120px] items-center justify-between gap-4">
         <Link href="/" aria-label="Limatel Nigeria Limited, home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
@@ -75,7 +76,7 @@ export function Header() {
         </nav>
         <Link
           href="/contact"
-          className="link-arrow hidden items-center gap-2 rounded-full bg-ink px-4 py-2 text-[13px] text-paper transition-colors hover:bg-peri-deep lg:inline-flex"
+          className="link-arrow hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-ink px-6 py-3 text-base text-paper transition-colors hover:bg-peri-deep lg:inline-flex"
         >
           Request a survey
           <span aria-hidden="true">→</span>
@@ -94,6 +95,7 @@ export function Header() {
           </span>
         </button>
       </div>
+      </div>
       <div
         id="mobile-nav"
         inert={!open}
@@ -101,7 +103,7 @@ export function Header() {
           open ? "max-h-[32rem] border-t border-line opacity-100" : "pointer-events-none max-h-0 opacity-0"
         }`}
       >
-        <nav className="flex flex-col px-6 py-4" aria-label="Mobile">
+        <nav className="flex flex-col px-6 py-4 sm:px-12 lg:px-16" aria-label="Mobile">
           {nav.map((item, index) => {
             const active = pathname === item.href;
             return (
@@ -121,7 +123,7 @@ export function Header() {
           })}
           <Link
             href="/contact"
-            className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm text-paper"
+            className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-base text-paper"
             onClick={() => setOpen(false)}
           >
             Request a survey

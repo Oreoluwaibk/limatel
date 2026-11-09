@@ -22,7 +22,7 @@ export default function SectorsPage() {
           These are the sectors the work already sits in.
         </p>
       </PageHeading>
-      <section className="px-5 pb-24 sm:px-8">
+      <section className="px-6 pb-24 sm:px-12 lg:px-16">
         <div className="mx-auto max-w-[1120px]">
           <Reveal>
             <ul className="grid border-b border-line sm:grid-cols-2 lg:grid-cols-3">

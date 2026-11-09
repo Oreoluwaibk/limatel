@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
 import { Reveal } from "@/components/reveal";
-import { company } from "@/lib/content";
+import { company, specialty } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Who we are",
@@ -30,7 +30,7 @@ export default function WhoWeArePage() {
           operators depend on, then stay with those routes for maintenance and restoration.
         </p>
       </PageHeading>
-      <section className="px-5 pb-20 sm:px-8 lg:pb-28">
+      <section className="px-6 pb-20 sm:px-12 lg:px-16 lg:pb-28">
         <div className="mx-auto max-w-[1120px]">
           <Reveal>
             <div className="grid gap-8 text-lg leading-8 text-ink/78 lg:grid-cols-12">
@@ -45,9 +45,32 @@ export default function WhoWeArePage() {
                 office in Jibowu Estate, Abule Egba.
               </p>
             </div>
-            <p className="mt-10 max-w-3xl font-serif text-2xl italic leading-snug sm:text-3xl">
-              {company.tagline}.
+            <p className="mt-10 max-w-3xl text-lg leading-8 text-ink/78">{company.positioning}</p>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-ink/78">
+              From a business history that dates to {company.established}, Limatel supports operators,
+              infrastructure providers, government bodies and corporate organisations through dependable
+              engineering, disciplined project execution and responsive network maintenance.
             </p>
+            <div className="mt-12 grid gap-px overflow-hidden rounded-[28px] bg-line lg:grid-cols-2">
+              <div className="bg-white px-7 py-8 sm:px-10 sm:py-10">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-peri-deep">Mission</p>
+                <p className="mt-4 font-serif text-2xl leading-snug sm:text-[1.7rem]">{company.mission}</p>
+              </div>
+              <div className="bg-sand px-7 py-8 sm:px-10 sm:py-10">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-peri-deep">Vision</p>
+                <p className="mt-4 font-serif text-2xl leading-snug sm:text-[1.7rem]">{company.vision}</p>
+              </div>
+            </div>
+            <div className="mt-14">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-peri-deep">Specialty</p>
+              <ul className="mt-6 grid gap-x-10 gap-y-3 sm:grid-cols-2">
+                {specialty.map((item) => (
+                  <li key={item} className="border-t border-line pt-3 text-lg leading-7">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
             <dl className="mt-12 grid gap-px overflow-hidden rounded-[22px] bg-line sm:grid-cols-2 lg:grid-cols-4">
               {facts.map((fact) => (
                 <div key={fact.label} className="bg-sand px-5 py-5">

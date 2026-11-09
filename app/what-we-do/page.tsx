@@ -19,7 +19,8 @@ export default function WhatWeDoPage() {
           kinds of work the crews carry.
         </p>
       </PageHeading>
-      <div className="mx-auto flex max-w-[1120px] flex-col gap-20 px-5 pb-24 sm:px-8 lg:gap-28">
+      <div className="px-6 pb-24 sm:px-12 lg:px-16">
+      <div className="mx-auto flex max-w-[1120px] flex-col gap-20 lg:gap-28">
         {services.map((service, index) => (
           <article id={service.id} key={service.id} className="scroll-mt-32">
             <Reveal>
@@ -45,6 +46,7 @@ export default function WhatWeDoPage() {
             </Reveal>
           </article>
         ))}
+      </div>
       </div>
     </>
   );

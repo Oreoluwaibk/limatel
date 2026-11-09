@@ -24,7 +24,8 @@ export default function Home() {
           className="banner-photo object-cover object-[62%_center]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/20" />
-        <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-[1120px] flex-col justify-end px-5 py-16 sm:px-8 sm:py-20">
+        <div className="relative z-10 flex min-h-[78vh] flex-col justify-end px-6 py-16 sm:px-12 sm:py-20 lg:px-16">
+        <div className="mx-auto flex w-full max-w-[1120px] flex-col justify-end">
           <p className="text-[11px] uppercase tracking-[0.22em] text-paper/75">
             Since {company.established} · Lagos
           </p>
@@ -52,9 +53,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 lg:py-24">
+      <section className="px-6 py-16 sm:px-12 lg:px-16 lg:py-24">
         <div className="mx-auto grid max-w-[1120px] items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-7">
             <RouteArt />
@@ -88,7 +90,7 @@ export default function Home() {
         </dl>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 lg:py-24">
+      <section className="px-6 py-16 sm:px-12 lg:px-16 lg:py-24">
         <div className="mx-auto grid max-w-[1120px] gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <p className="text-[11px] uppercase tracking-[0.22em] text-peri-deep">Who we are</p>
@@ -102,6 +104,7 @@ export default function Home() {
               maintenance and restoration. The business began in {company.established} as{" "}
               {company.formerName}, and was incorporated in {company.incorporated}.
             </p>
+            <p className="mt-5 text-lg leading-8 text-ink/78">{company.mission}</p>
             <Link
               href="/who-we-are"
               className="link-arrow mt-6 inline-flex items-center gap-2 text-sm underline decoration-peri decoration-2 underline-offset-[6px]"
@@ -113,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 pb-8 sm:px-8 lg:pb-16">
+      <section className="px-6 pb-8 sm:px-12 lg:px-16 lg:pb-16">
         <div className="mx-auto max-w-[1120px]">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-xl">
@@ -153,7 +156,7 @@ export default function Home() {
 
       <Testimonials />
 
-      <section className="px-5 pb-20 sm:px-8">
+      <section className="px-6 pb-20 sm:px-12 lg:px-16">
         <div className="mx-auto flex max-w-[1120px] flex-col items-start justify-between gap-6 rounded-[28px] bg-ink px-7 py-10 text-paper sm:px-10 sm:py-12 md:flex-row md:items-center">
           <div>
             <p className="text-[11px] uppercase tracking-[0.22em] text-peri">Next step</p>

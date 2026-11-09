@@ -5,7 +5,8 @@ import { Logo } from "./logo";
 export function Footer() {
   return (
     <footer className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-[1120px] gap-12 px-5 py-14 sm:px-8 md:grid-cols-12">
+      <div className="px-6 py-14 sm:px-12 lg:px-16">
+      <div className="mx-auto grid max-w-[1120px] gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
           <Link href="/" aria-label="Limatel Nigeria Limited, home">
             <Logo light />
@@ -49,14 +50,17 @@ export function Footer() {
           </p>
         </div>
       </div>
+      </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1120px] flex-col gap-2 px-5 py-5 text-xs leading-5 text-paper/45 sm:px-8 md:flex-row md:justify-between">
+        <div className="px-6 sm:px-12 lg:px-16">
+        <div className="mx-auto flex max-w-[1120px] flex-col gap-2 py-5 text-xs leading-5 text-paper/45 md:flex-row md:justify-between">
           <p>
             {company.name} · RC {company.rc} · Incorporated {company.incorporated}
           </p>
           <p>
             Banker: {company.banker} · Insurer: {company.insurer}
           </p>
+        </div>
         </div>
       </div>
     </footer>

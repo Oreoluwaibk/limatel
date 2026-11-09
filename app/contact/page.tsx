@@ -18,7 +18,7 @@ export default function ContactPage() {
           crew on it.
         </p>
       </PageHeading>
-      <section className="px-5 pb-24 sm:px-8">
+      <section className="px-6 pb-24 sm:px-12 lg:px-16">
         <div className="mx-auto grid max-w-[1120px] gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <address className="text-lg leading-8 not-italic text-ink/80">
